@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía | Proyecto SPECTER - Clasificación de Dígitos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Paleta de Colores SPECTER / Continental */
+            --color-uc-blue: #004d99; /* Azul Principal */
+            --color-uc-light: #007bff; /* Azul Secundario */
+            --color-success: #28a745; /* Verde para Éxito */
+            --color-text: #343a40; /* Texto oscuro */
+            --color-background: #f0f4f8; /* Fondo muy claro */
+            --color-box-bg: #ffffff; /* Fondo de cajas */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        /* --- CABECERA ESTILIZADA --- */
+        .header-infografia {
+            background-color: var(--color-uc-blue);
+            color: white;
+            padding: 40px 0;
+            border-bottom: 8px solid var(--color-uc-light);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+        }
+        .header-infografia h1 {
+            font-weight: 900;
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+        .header-infografia .lead {
+            font-style: italic;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .group-info {
+            font-size: 0.8rem;
+            margin-top: 15px;
+            opacity: 0.8;
+        }
+
+        /* --- CUERPO DE LA INFOGRAFÍA --- */
+        .crisp-section-title {
+            color: var(--color-uc-blue);
+            font-weight: 700;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .crisp-section-title::after {
+            content: '';
+            width: 100px;
+            height: 4px;
+            background-color: var(--color-uc-light);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        /* Estilo de la Tarjeta (CRISP-DM Step) */
+        .crisp-step {
+            background-color: var(--color-box-bg);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            border-top: 5px solid transparent; /* Para el color dinámico del borde */
+        }
+        .crisp-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .crisp-step h3 {
+            color: var(--color-text);
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-align: center;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        /* Estilo de los Iconos */
+        .step-icon-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .step-icon {
+            font-size: 3rem;
+            padding: 15px;
+            border-radius: 50%;
+            color: var(--color-box-bg);
+            background-color: var(--color-uc-light);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        /* Colores específicos para las fases (Estilización más rica) */
+        #step-1 { border-top-color: #ffc107; } /* Amarillo */
+        #step-2 { border-top-color: #17a2b8; } /* Turquesa */
+        #step-3 { border-top-color: #dc3545; } /* Rojo */
+        #step-4 { border-top-color: var(--color-success); } /* Verde */
+        #step-5 { border-top-color: #6f42c1; } /* Púrpura */
+        #step-6 { border-top-color: #fd7e14; } /* Naranja */
+
+        /* Estilo de las listas de datos */
+        .crisp-step ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+        .crisp-step li {
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+        .crisp-step strong {
+            color: var(--color-uc-blue);
+        }
+
+        /* Estilos de la sección CTA */
+        .cta-section {
+            padding: 50px 0;
+            background: linear-gradient(135deg, var(--color-uc-blue) 0%, #007bff 100%);
+            border-top: 3px dashed white;
+        }
+        .cta-section h2 {
+            color: white;
+            font-weight: 700;
+        }
+        .btn-custom {
+            font-size: 1.1rem;
+            padding: 12px 30px;
+            margin: 10px;
+        }
+        .btn-custom-doc {
+            background-color: white;
+            color: var(--color-uc-blue);
+            border: none;
+            font-weight: bold;
+        }
+        .btn-custom-doc:hover {
+            background-color: #f0f0f0;
+            color: var(--color-uc-blue);
+        }
+        .btn-custom-github {
+            background-color: var(--color-text);
+            color: white;
+            border: 2px solid white;
+        }
+        .btn-custom-github:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-infografia">
+        <div class="container text-center">
+            <h1>PROYECTO SPECTER: Clasificación de Dígitos con IA</h1>
+            <p class="lead">Aplicando la Metodología CRISP-DM</p>
+            <div class="group-info">
+                <p>
+                    <strong>Estudiantes:</strong> Salavaldez Cusi Gesu Francisco, Lizarraga Condori Juan Yasser, Prado Farfán Daniel Benjamyn, Macedo Ancori Danny Ronaldo, Rojas Canales Joseph Anibal
+                    <br>
+                    <strong>Curso:</strong> Construcción de Software | <strong>Universidad:</strong> Continental | <strong>Ciclo:</strong> 2025-11
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <h2 class="text-center crisp-section-title">El Ciclo de Vida del Proyecto de IA</h2>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            
+            <div class="col">
+                <div class="crisp-step" id="step-1">
+                    <div class="step-icon-container"><i class="fas fa-bullseye step-icon" style="background-color: #ffc107;"></i></div>
+                    <h3>1. Comprensión del Negocio</h3>
+                    <p><strong>Objetivo:</strong> Construir un sistema de IA que pueda tomar una imagen digital de un dígito escrito a mano (del 0 al 9) y clasificarlo correctamente. Esto simula la automatización de la transcripción de datos manuscritos.</p>
+                    <p><strong>Criterios de Éxito:</strong></p>
+                    <ul>
+                        <li>Precisión (Accuracy) del modelo: 95%.</li>
+                        <li>Tiempo de Inferencia: < 100 milisegundos.</li>
+                        <li>Modelo desplegado como un servicio web (API) accesible.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="crisp-step" id="step-2">
+                    <div class="step-icon-container"><i class="fas fa-database step-icon" style="background-color: #17a2b8;"></i></div>
+                    <h3>2. Preparación de Datos</h3>
+                    <p><strong>Fuente:</strong> Dataset MNIST (60,000 imágenes para entrenamiento y 10,000 para prueba).</p>
+                    <p><strong>Entrada:</strong> Imágenes en escala de grises de 28x28 píxeles.</p>
+                    <p><strong>Preprocesamiento Esencial:</strong></p>
+                    <ul>
+                        <li>Normalización: Escalar píxeles dividiendo por 255 para rango [0, 1].</li>
+                        <li>One-Hot Encoding: Convierte etiquetas categóricas (ej. 5) en vectores binarios.</li>
+                        <li>Reforma (Reshape): Modifica la dimensión a (28, 28, 1) para las CNN.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="crisp-step" id="step-3">
+                    <div class="step-icon-container"><i class="fas fa-brain step-icon" style="background-color: #dc3545;"></i></div>
+                    <h3>3. Modelado</h3>
+                    <p><strong>Técnica:</strong> Red Neuronal Convolucional (CNN), implementada con TensorFlow/Keras.</p>
+                    <p><strong>Arquitectura Clave:</strong></p>
+                    <ul>
+                        <li>Capas Conv2D (32 y 64 filtros) con ReLU.</li>
+                        <li>Capas de MaxPooling para reducir dimensionalidad y computación.</li>
+                        <li>Capa de Salida: 10 neuronas con activación Softmax.</li>
+                    </ul>
+                    <p><strong>Configuración:</strong> Optimizador Adam y Categorical Cross-Entropy como pérdida. Épocas: 10.</p>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="crisp-step" id="step-4">
+                    <div class="step-icon-container"><i class="fas fa-check-circle step-icon" style="background-color: var(--color-success);"></i></div>
+                    <h3>4. Evaluación</h3>
+                    <p><strong>Resultado (Ejemplo):</strong> Precisión (Accuracy) de 98.5%.</p>
+                    <p><strong>¡Meta de 95% cumplida!</strong>.</p>
+                    <p><strong>Análisis:</strong> Uso de la Matriz de Confusión para identificar errores específicos.</p>
+                    <ul>
+                        <li>**Hallazgo Común:** Errores entre dígitos visualmente similares (ej. 4 y 9, 3 y 8).</li>
+                    </ul>
+                    <p class="text-success">El modelo CNN cumple satisfactoriamente y demuestra alta capacidad de generalización.</p>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="crisp-step" id="step-5">
+                    <div class="step-icon-container"><i class="fas fa-cloud step-icon" style="background-color: #6f42c1;"></i></div>
+                    <h3>5. Despliegue</h3>
+                    <p><strong>Estrategia:</strong> El modelo se empaquetará como un servicio web RESTful (API).</p>
+                    <p><strong>Tecnología:</strong></p>
+                    <ul>
+                        <li>Framework: Flask o FastAPI en Python.</li>
+                        <li>Contenerización: Docker para asegurar la portabilidad en servidores cloud.</li>
+                    </ul>
+                    <p><strong>Flujo de Interacción:</strong> El usuario sube la imagen, la API la preprocesa y la pasa al modelo guardado, devolviendo la predicción JSON.</p>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="crisp-step" id="step-6">
+                    <div class="step-icon-container"><i class="fas fa-wrench step-icon" style="background-color: #fd7e14;"></i></div>
+                    <h3>6. Mantenimiento</h3>
+                    <p>Se establecerá un sistema de monitoreo en producción para rastrear la precisión en tiempo real.</p>
+                    <p><strong>Umbral de Alerta:</strong> Si la precisión cae por debajo del 90%.</p>
+                    <p><strong>Acción Correctiva:</strong> Sugerir un re-entrenamiento del modelo con datos nuevos o revisados.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="cta-section text-center">
+        <h2>Explora el Proyecto a Fondo</h2>
+        <div class="mt-4">
+            <a href="https://docs.google.com/document/d/1bToh4TXSufmKM2PLZtu4dk32KoAxyKvAtxh7llUV3B4/edit?usp=sharing" class="btn btn-custom btn-custom-doc shadow-lg" target="_blank">
+                <i class="fas fa-file-alt me-2"></i>
+                Ver Documentación Completa
+            </a>
+            <a href="https://github.com/YasserJxxxx/MNIST_CRISP_DM" class="btn btn-custom btn-custom-github shadow-lg" target="_blank">
+                <i class="fab fa-github me-2"></i>
+                Repositorio GitHub
+            </a>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
